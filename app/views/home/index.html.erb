@@ -1,5 +1,58 @@
 <div class="hero-unit">
 
-<h1>welcome on board</h1>
+<h1>deck</h1>
+
+Workspace for aspiring software designers and intraweb ninjas.
 
 </div>
+
+<h2>How it works?</h2>
+
+<p>
+There are <%= Location.free_workspaces %> work spaces currently available. Rent fluctuates as a function of occupancy - effectively something around 200-300 € per month.
+</p> 
+
+<p>
+  Services include 200 MB internet, electronic alarm system, weekly cleaning, kitchen area and planning/meeting space are taken care of.
+</p>
+
+<h2>Members</h2>
+
+<ul class="thumbnails">
+  <% @members.each do |member| %>
+    <li class="span4">
+      <a href="#" class="thumbnail">
+      <img data-src="holder.js/300x200" alt="">
+      <div class="member-name">
+        <%= member.name %>
+      </div>
+      <div class="member-company">  
+        <%= member.company%>
+      </div>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Location</h2>
+
+<div id="map" class="map" style="height: 300px"></div>
+
+<script type="text/javascript">
+$(function () {
+  
+  // create a map in the "map" div, set the view to a given place and zoom
+  var map = L.map('map').setView([51.505, -0.09], 13);
+
+  // add an OpenStreetMap tile layer
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // add a marker in the given location, attach some popup content to it and open the popup
+  L.marker([51.5, -0.09]).addTo(map)
+      .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
+      .openPopup();
+  
+    });
+</script>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130314132002) do
+ActiveRecord::Schema.define(:version => 20130314143204) do
 
   create_table "members", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(:version => 20130314132002) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "company"
+    t.string   "y_code"
+    t.string   "street_address"
+    t.string   "postcode"
+    t.string   "city"
+    t.string   "linkedin"
+    t.string   "twitter"
+    t.string   "phone"
   end
 
   add_index "members", ["email"], :name => "index_members_on_email", :unique => true

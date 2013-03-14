@@ -3,8 +3,42 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email, :autofocus => true %>
+  </div>
+
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div>
+  <%= f.label :company %>
+  <%= f.text_field :company %>
+  </div>
+  <div>
+  <%= f.label :y_code %>
+  <%= f.text_field :y_code %>
+  </div>
+  <div>
+  <%= f.label :linkedin %>
+  <%= f.text_field :linkedin %>
+  </div>
+  <div>
+  <%= f.label :twitter %>
+  <%= f.text_field :twitter %>
+  </div>
+  <div>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  </div>
+
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -13,7 +47,7 @@
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div><%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %></div>
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
