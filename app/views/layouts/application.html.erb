@@ -8,20 +8,36 @@
 </head>
 <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <hr>
+  <div class="container">
+    
+    <% if notice %>
+    <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert"><%= alert %></p>
+    <% end %>
 
-  <%= yield %>
 
-  <hr>
+    <%= yield %>
 
-  <% if current_member %>
-    <%= link_to 'Edit details', edit_member_registration_path %>
-    <%= link_to 'Sign out', destroy_member_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to 'Sign in', new_member_session_path %>
-  <% end %>
+    <hr>
+    
+    <div class="navbar">
+    <div class="navbar-inner">
+    <ul class="nav">
 
+      <% if current_member %>
+        <li><%= link_to 'Edit details', edit_member_registration_path %></li>
+        <li><%= link_to 'Sign out', destroy_member_session_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to 'Sign in', new_member_session_path %></li>
+      <% end %>
+
+    </ul>
+    </div>
+    </div>
+
+
+  </div>
 </body>
 </html>
