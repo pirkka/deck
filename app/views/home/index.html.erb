@@ -42,7 +42,7 @@ There are <%= Location.free_workspaces %> work spaces currently available. Rent 
 $(function () {
   
   // create a map in the "map" div, set the view to a given place and zoom
-  var map = L.map('map').setView([51.505, -0.09], 13);
+  var map = L.map('map').setView([60.158, 24.9345882], 16);
 
   // add an OpenStreetMap tile layer
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -50,8 +50,8 @@ $(function () {
   }).addTo(map);
 
   // add a marker in the given location, attach some popup content to it and open the popup
-  L.marker([51.5, -0.09]).addTo(map)
-      .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
+  L.marker([60.15827, 24.9340]).addTo(map)
+      .bindPopup('deck is located!')
       .openPopup();
   
     });
