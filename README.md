@@ -5,7 +5,6 @@ Co working space management system.
 
 TODO
 ====
-- secure registrations 
 - web layoutz
 
 ENV CONFIG EXAMPLE
@@ -26,3 +25,4 @@ LAT=61.5012156
 LON=23.7661498
 IBAN=FI234 1234 12 123
 SWIFT=FBANFIHH
+INVITE_CODE=lollerisloo (needed for registrations)

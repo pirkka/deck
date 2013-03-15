@@ -21,7 +21,7 @@ There are <%= Location.free_workspaces %> work spaces currently available. Rent 
 <ul class="thumbnails">
   <% @members.each do |member| %>
     <li class="span4">
-      <a href="#" class="thumbnail">
+      <a href="<%= member.url %>" class="thumbnail">
       <img data-src="holder.js/300x200" alt="">
       <div class="member-name">
         <%= member.name %>
