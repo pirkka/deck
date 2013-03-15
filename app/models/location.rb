@@ -25,11 +25,11 @@ module Location
   end
   
   def self.lat
-    ENV['LAT']
+    ENV['LAT'].to_f
   end
   
   def self.lon
-    ENV['LON']
+    ENV['LON'].to_f
   end
   
 end
