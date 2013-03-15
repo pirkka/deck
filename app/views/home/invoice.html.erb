@@ -42,7 +42,7 @@
     <td><%= @invoice.taxless %> €</td>
   </tr>
   <tr>
-    <td>ALV</td>
+    <td>ALV <%= (Invoice.vat*100).to_i %>%</td>
     <td><%= @invoice.vat%> €</td>
   </tr>
   <tr>
@@ -52,5 +52,13 @@
   <tr>
     <td>Maksuehto</td>
     <td>3 pv netto</td>
+  </tr>
+  <tr>
+    <td>Saajan IBAN-tilinumero</td>
+    <td><%= ENV['IBAN'] %></td>
+  </tr>
+  <tr>
+    <td>SWIFT/BIC</td>
+    <td><%= ENV['SWIFT'] %></td>
   </tr>
 </table>
