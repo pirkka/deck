@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Deck</title>
+  <title>Vuokralasku</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   
   <!-- leaflet -->
@@ -13,6 +13,7 @@
   
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
@@ -28,23 +29,6 @@
 
     <%= yield %>
 
-    <hr>
-    
-    <div class="navbar">
-    <div class="navbar-inner">
-    <ul class="nav">
-
-      <% if current_member %>
-        <li><%= link_to 'Edit details', edit_member_registration_path %></li>
-        <li><%= link_to 'Invoice', invoice_path %></li>
-        <li><%= link_to 'Sign out', destroy_member_session_path, :method => :delete %></li>
-      <% else %>
-        <li><%= link_to 'Sign in', new_member_session_path %></li>
-      <% end %>
-
-    </ul>
-    </div>
-    </div>
 
 
   </div>

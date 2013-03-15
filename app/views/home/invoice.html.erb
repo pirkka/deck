@@ -1,0 +1,56 @@
+<h1>Vuokralasku</h1>
+
+<ul class="thumbnails">
+    <li class="span4" class="thumbnail">
+      
+      <strong>Laskun vastaanottaja</strong><br />
+      <%= @invoice.invoicee.company %><br />
+      <%= @invoice.invoicee.name %><br />
+      <%= Location.street_address %><br />
+      <%= Location.postcode %> <%= Location.city %><br />
+      Y-tunnus: <%= @invoice.invoicee.y_code %><br />
+
+    </li>
+
+
+    <li class="span4" class="thumbnail">
+      
+      <strong>Laskun lähettäjä</strong><br />
+
+        <%= @invoice.invoicer.company %><br />
+        <%= @invoice.invoicer.name %><br />
+        <%= Location.street_address %><br />
+        <%= Location.postcode %> <%= Location.city %><br />
+        Y-tunnus: <%= @invoice.invoicer.y_code %><br />
+    </li>
+</ul>
+
+
+
+<table class="table table-bordered">
+  <tr>
+    <td>Päivämäärä</td>
+    <td><%= @invoice.date %></td>
+  </tr>
+  <tr>
+    <td>Selite</td>
+    <td>Työpisteen vuokra osoitteessa <%= Location.street_address %>, <%= Location.postcode %> <%= Location.city %>.
+    </td>
+  </tr>
+  <tr>
+    <td>Veroton</td>
+    <td><%= @invoice.taxless %> €</td>
+  </tr>
+  <tr>
+    <td>ALV</td>
+    <td><%= @invoice.vat%> €</td>
+  </tr>
+  <tr>
+    <td>Maksettava</td>
+    <td><%= @invoice.total %> €</td>
+  </tr>
+  <tr>
+    <td>Maksuehto</td>
+    <td>3 pv netto</td>
+  </tr>
+</table>

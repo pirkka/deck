@@ -1,6 +1,8 @@
 Deck::Application.routes.draw do
 
   devise_for :members
+  
+  match '/invoice' => 'home#invoice', :as => :invoice
 
   root :to => "home#index"
 
