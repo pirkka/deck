@@ -1,10 +1,8 @@
 @import "bootstrap";
 
 .container {
-  margin-top: 40px;
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
+  width: 100%;
+  margin: 100px;
 }
 
 .member-company {
@@ -26,4 +24,44 @@ h1 {
 
 a {
   color: #989797;
+}
+
+.x-leaflet-marker-icon {
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: rotate;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotateX(0deg);
+  }
+ 
+  to {
+    -webkit-transform: rotateX(360deg);
+  }
+}
+
+#map {
+
+}
+
+.leaflet-container .leaflet-control a {
+  color: #999;
+}
+
+.card { /* poker size (2.5×3.5 inches (63×88 mm),  */
+  margin-top: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 335px;
+  height: 485px;
+  float: left;
+  margin: 10px;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 20px;
 }

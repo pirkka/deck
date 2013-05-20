@@ -3,13 +3,14 @@
 <head>
   <title>Deck</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  
+
   <!-- leaflet -->
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
   <!--[if lte IE 8]>
       <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
   <![endif]-->
   <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+  <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.1"></script>  
   
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -27,13 +28,10 @@
 
 
     <%= yield %>
-
-    <hr>
-    
-    <div class="navbar">
-    <div class="navbar-inner">
-    <ul class="nav">
-
+  
+  
+    <div class="card">
+      <h2>Member Area</h2>
       <% if current_member %>
         <li><%= link_to 'Edit details', edit_member_registration_path %></li>
         <li><%= link_to 'Invoice', invoice_path, :target => "_blank" %></li>
@@ -41,12 +39,9 @@
       <% else %>
         <li><%= link_to 'Sign in', new_member_session_path %></li>
       <% end %>
-
-    </ul>
     </div>
-    </div>
-
 
   </div>
+  
 </body>
 </html>

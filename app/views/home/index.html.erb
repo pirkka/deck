@@ -1,12 +1,5 @@
-<div class="" style="text-align: center;">
 
-<%= image_tag 'deck-logo.png', :style => '' %>
-
-
-<div style="margin: 30px;">co-working space for software pros</div>
-
-</div>
-
+<div class="card">
 <h2>About</h2>
 
 <p>
@@ -17,13 +10,28 @@ There are <%= Location.free_workspaces %> work spaces currently available for re
   Services include 200 MB internet, electronic alarm system, weekly cleaning, kitchen area and planning/meeting space.
 </p>
 
-<h2>Members</h2>
+<p>
+Deck is located at Pursimiehenkatu 26 H, right next to the last stop of tram number 1. Bus 14 rides rides close as well.
+</p>
+</div>
 
-<ul class="thumbnails">
+
+<div class="card">
+
+  <div class="" style="text-align: center; margin-top: 155px;">
+
+  <%= image_tag 'deck-logo.png', :style => '' %>
+
+
+  <div style="margin: 30px;">co-working space for software pros</div>
+
+  </div>
+</div>
+
+
   <% @members.each do |member| %>
-    <li class="span4">
-      <a href="<%= member.url %>" class="thumbnail">
-      <img data-src="holder.js/300x200" alt="">
+  <div class="card">
+    <a href="<%= member.url %>">
       <div class="member-name">
         <%= member.name %>
       </div>
@@ -31,29 +39,33 @@ There are <%= Location.free_workspaces %> work spaces currently available for re
         <%= member.company%>
       </div>
       </a>
-    </li>
+  </div>
   <% end %>
-</ul>
 
-<h2>Location</h2>
-
+<div class="card">
+<h2>Map</h2>
 <div id="map" class="map" style="height: 300px"></div>
-
+</div>
 <script type="text/javascript">
 $(function () {
   
-  // create a map in the "map" div, set the view to a given place and zoom
-  var map = L.map('map').setView([<%= Location.lat%>, <%= Location.lon %>], 16);
-
-  // add an OpenStreetMap tile layer
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-
+  // stamen layer
+  var layer = new L.StamenTileLayer("toner-lite");
+  var map = new L.Map("map", {
+      center: new L.LatLng(<%= Location.lat%>, <%= Location.lon %>),
+      zoom: 17
+  });
+  map.addLayer(layer);
+  
+  var deckIcon = L.icon({
+    iconUrl: '/assets/deck-marker.png',
+    iconSize:     [80, 47],
+    iconAnchor:   [40, 0],
+    popupAnchor:  [-3, -76]
+  });  
+  
   // add a marker in the given location, attach some popup content to it and open the popup
-  L.marker([<%= Location.lat%>, <%= Location.lon %>]).addTo(map)
-      .bindPopup('deck is located!')
-      .openPopup();
+  L.marker([<%= Location.lat%>, <%= Location.lon %>], {icon: deckIcon}).addTo(map);
   
     });
 </script>
