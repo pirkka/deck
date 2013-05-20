@@ -1,11 +1,29 @@
 @import "bootstrap";
 
 .container {
-  margin-top: 20px;
+  margin-top: 40px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
 }
 
 .member-company {
   text-decoration: none;
-  color: black;
   font-size: 0.8em;
+}
+
+body {
+  background: url(image-path("deck-pattern.png"));
+  font-family: "BrownStd";
+  font-size: 17px;
+  color: #989797;
+}
+
+h1 {
+ font-family: "BrownStd";
+ font-weight: normal; 
+}
+
+a {
+  color: #989797;
 }

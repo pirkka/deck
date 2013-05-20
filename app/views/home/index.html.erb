@@ -1,19 +1,20 @@
-<div class="hero-unit">
+<div class="" style="text-align: center;">
 
-<h1>deck</h1>
+<%= image_tag 'deck-logo.png', :style => '' %>
 
-Workspace for aspiring software designers and intraweb ninjas.
+
+<div style="margin: 30px;">co-working space for software pros</div>
 
 </div>
 
-<h2>How it works?</h2>
+<h2>About</h2>
 
 <p>
-There are <%= Location.free_workspaces %> work spaces currently available. Rent is currently <%= Invoice.new.taxless.to_i %> € per month (+VAT).
+There are <%= Location.free_workspaces %> work spaces currently available for renting. Monthly rent is now <%= Invoice.new.taxless.to_i %> € (+VAT).
 </p> 
 
 <p>
-  Services include 200 MB internet, electronic alarm system, weekly cleaning, kitchen area and planning/meeting space are taken care of.
+  Services include 200 MB internet, electronic alarm system, weekly cleaning, kitchen area and planning/meeting space.
 </p>
 
 <h2>Members</h2>
