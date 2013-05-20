@@ -5,6 +5,10 @@
   margin: 100px;
 }
 
+.member-name {
+  margin-top: 180px;
+}
+
 .member-company {
   text-decoration: none;
   font-size: 0.8em;
@@ -50,16 +54,20 @@ a {
   color: #999;
 }
 
-.card { /* poker size (2.5×3.5 inches (63×88 mm),  */
+.card { /* poker size (2.5×3.5 inches (63×88 mm), our size 375 * 525*/
   margin-top: 40px;
   background: white;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 17px;
   width: 335px;
   height: 485px;
   float: left;
   margin: 10px;
   text-align: center;
+}
+
+.member-card {
+  background: url(image-path("deck-card-deco.png"));
 }
 
 p {
