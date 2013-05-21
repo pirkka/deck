@@ -8,14 +8,19 @@
 .member-name {
   color: white;
   margin-top: 220px;
-  font-size: 2em;
+  font-size: 2.3em;
   text-shadow: 2px 2px #444;
+  -webkit-text-stroke: 1px #ccc;
+  -webkit-text-fill-color: #FFFFFF;
+  // background: -moz-linear-gradient(left,  #fff,  #000);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000');
 }
 
 .member-company {
   color: white;
   text-decoration: none;
   font-size: 1.2em;
+  -webkit-text-stroke: 1px #ccc;
   text-shadow: 2px 2px #444;
 }
 
@@ -87,6 +92,12 @@ a:hover{
 
 .card-backside {
   background: url(image-path("deck-card-backside.png"));
+}
+
+.card-map {
+  transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg); /* IE 9 */
+  -webkit-transform: rotate(-2deg); /* Safari and Chrome */
 }
 
 .card-site-title {
