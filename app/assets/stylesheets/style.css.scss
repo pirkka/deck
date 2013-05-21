@@ -65,11 +65,18 @@ a:hover{
 }
 
 #map {
-
+  width: 335px;
+  height: 485px;
+  overflow: hidden;
+  border: 1px solid #eee;
 }
 
 .leaflet-container .leaflet-control a {
   color: #999;
+}
+
+.leaflet-control-attribution {
+  opacity: 0.7;
 }
 
 .card { /* poker size (2.5×3.5 inches (63×88 mm), our size 375 * 525*/
@@ -88,6 +95,32 @@ a:hover{
 
 .member-card {
   background: url(image-path("deck-card-tuukka.png"));
+  position: absolute;
+  transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg); /* IE 9 */
+  -webkit-transform: rotate(-10deg); /* Safari and Chrome */
+  margin: 0;
+  cursor: pointer;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.stack {
+  position: relative;
+  float: left;
+  width: 335px;
+  height: 485px;
+  float: left;
+  margin: 22px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .card-backside {
@@ -114,11 +147,16 @@ a:hover{
   transform: rotate(2deg);
   -ms-transform: rotate(2deg); /* IE 9 */
   -webkit-transform: rotate(2deg); /* Safari and Chrome */
-  z-index: 1;
+}
+
+.card-member-area {
+  transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg); /* IE 9 */
+  -webkit-transform: rotate(-4deg); /* Safari and Chrome */
 }
 
 .about-heading {
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .member-area-heading {
@@ -127,4 +165,6 @@ a:hover{
 
 p {
   margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }

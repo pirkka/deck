@@ -2,15 +2,37 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-# create a map in the "map" div, set the view to a given place and zoom
-map = L.map('map').setView([51.505, -0.09], 13)
+# using z-index (complex and nasty and unfinished)
+#
+# $ ->
+#   $('.member-card').click -> 
+#     console.log 'reordering stack'
+#     $('.member-card').each (idx, val) -> 
+#       current_z = $(val).css('z-order')
+#       if (typeof current_z == 'undefined')
+#         new_z = idx
+#       else
+#         new_z = current_z + 1
+#       console.log current_z + ' to ' + new_z + ' for ' + $(val).html()
+#       $(val).css('z-index', new_z)
+#     console.log 'sending clicked to back'
+#     $(this).css('z-index', -1)
+#     console.log 'sending clicked to back - after: ' + $(this).css('z-index')
 
-# add an OpenStreetMap tile layer
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map)
 
-# add a marker in the given location, attach some popup content to it and open the popup
-L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
-    .openPopup();
+# using append and prepend
+
+$ ->
+  $('.member-card').click -> 
+    console.log 'reordering stack using prepend'
+    $('.stack').prepend($(this));
+    
+    # and now we can still randomize the position of the adjusted card
+
+    $(this).css('transform', 'rotate(' + (Math.floor(Math.random() * 40) + 1) - 20) + ')'
+    $(this).css('-ms-transform', 'rotate(' + (Math.floor(Math.random() * 40) + 1) - 20) + ')'
+    $(this).css('-webkit-transform', 'rotate(' + (Math.floor(Math.random() * 40) + 1) - 20) + ')'
+    
+    $(this).css('margin-top', (Math.floor(Math.random() * 60) + 1) - 30)
+    $(this).css('margin-left', (Math.floor(Math.random() * 80) + 1) - 40)
+  

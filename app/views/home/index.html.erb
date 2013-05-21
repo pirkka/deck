@@ -11,7 +11,8 @@
 <h2 class="about-heading">About</h2>
 
 <p>
-There are <%= Location.free_workspaces %> work spaces currently available for renting. Monthly rent is now <%= Invoice.new.taxless.to_i %> € (+VAT).
+<%= Location.free_workspaces %> free work spaces are currently available for rent. 
+Monthly rent is now <%= Invoice.new.taxless.to_i %> € (+VAT).
 </p> 
 
 <p>
@@ -19,16 +20,20 @@ There are <%= Location.free_workspaces %> work spaces currently available for re
 </p>
 
 <p>
-Deck is located at Pursimiehenkatu 26&nbsp;H, right next to the last stop of tram number 1A (Eira). Bus 14 rides rides close as well.
+Deck is located at Pursimiehenkatu 26&nbsp;H, right next to the last stop of tram number 1A (Eira). Bus 14 rides rides very close as well.
 </p>
+
+<p>
+  For enquiries please contact Pirkka&nbsp;Esko.
+</p>
+
 </div>
 
-<div id="map" class="map card card-map"></div>
 
+<div class="stack">
 
-
-  <% @members.each do |member| %>
-  <div class="card member-card">
+  <% @members.shuffle.each do |member| %>
+  <div class="card member-card unselectable" style="<%= random_rotation_css %>">
     <a href="<%= member.url %>">
       <div class="member-name">
         <%= member.name %>
@@ -39,6 +44,12 @@ Deck is located at Pursimiehenkatu 26&nbsp;H, right next to the last stop of tra
       </a>
   </div>
   <% end %>
+
+</div>
+
+<div id="map-card" class="card card-map">
+  <div id="map" class="map"></div>
+</div>
 
 
 <script type="text/javascript">
