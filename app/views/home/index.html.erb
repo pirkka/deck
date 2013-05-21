@@ -47,6 +47,23 @@ Deck is located at Pursimiehenkatu 26&nbsp;H, right next to the last stop of tra
 
 </div>
 
+<div class="stack">
+
+  <% @members.shuffle.each do |member| %>
+  <div class="card member-card unselectable" style="<%= random_rotation_css %>">
+    <a href="<%= member.url %>">
+      <div class="member-name">
+        <%= member.name %>
+      </div>
+      <div class="member-company">  
+        <%= member.company%>
+      </div>
+      </a>
+  </div>
+  <% end %>
+
+</div>
+
 <div id="map-card" class="card card-map">
   <div id="map" class="map"></div>
 </div>
