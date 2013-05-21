@@ -1,17 +1,22 @@
 @import "bootstrap";
 
 .container {
-  width: 100%;
+  width: auto;
   margin: 100px;
 }
 
 .member-name {
-  margin-top: 180px;
+  color: white;
+  margin-top: 220px;
+  font-size: 2em;
+  text-shadow: 2px 2px #444;
 }
 
 .member-company {
+  color: white;
   text-decoration: none;
-  font-size: 0.8em;
+  font-size: 1.2em;
+  text-shadow: 2px 2px #444;
 }
 
 body {
@@ -28,6 +33,14 @@ h1 {
 
 a {
   color: #989797;
+}
+
+a:hover{
+  text-decoration: none;
+}
+.member-card a:hover div {
+	text-shadow: 0 0 20px rgba(255,255,255,.5);
+	text-decoration: none;
 }
 
 .x-leaflet-marker-icon {
@@ -65,10 +78,40 @@ a {
   margin: 22px;
   text-align: center;
   border: 1px solid #eee;
+  background: url(image-path("deck-card-deco.png"));
 }
 
 .member-card {
-  background: url(image-path("deck-card-deco.png"));
+  background: url(image-path("deck-card-tuukka.png"));
+}
+
+.card-backside {
+  background: url(image-path("deck-card-backside.png"));
+}
+
+.card-site-title {
+  transform: rotate(-110deg);
+  -ms-transform: rotate(-110deg); /* IE 9 */
+  -webkit-transform: rotate(-110deg); /* Safari and Chrome */
+  margin-top: -70px;
+  margin-left: 30px;
+  margin-right: 70px;
+  z-index: 10;
+}
+
+.card-about {
+  transform: rotate(2deg);
+  -ms-transform: rotate(2deg); /* IE 9 */
+  -webkit-transform: rotate(2deg); /* Safari and Chrome */
+  z-index: 1;
+}
+
+.about-heading {
+  margin-top: 80px;
+}
+
+.member-area-heading {
+  margin-top: 80px;
 }
 
 p {

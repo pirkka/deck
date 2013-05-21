@@ -17,31 +17,30 @@
 </head>
 <body>
 
-  <div class="container">
+    <div class="container">
     
-    <% if notice %>
-    <p class="alert"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-    <p class="alert"><%= alert %></p>
-    <% end %>
-
-
-    <%= yield %>
-  
-  
-    <div class="card">
-      <h2>Member Area</h2>
-      <% if current_member %>
-        <li><%= link_to 'Edit details', edit_member_registration_path %></li>
-        <li><%= link_to 'Invoice', invoice_path, :target => "_blank" %></li>
-        <li><%= link_to 'Sign out', destroy_member_session_path, :method => :delete %></li>
-      <% else %>
-        <li><%= link_to 'Sign in', new_member_session_path %></li>
+      <% if notice %>
+      <p class="alert"><%= notice %></p>
       <% end %>
-    </div>
+      <% if alert %>
+      <p class="alert"><%= alert %></p>
+      <% end %>
 
-  </div>
+
+      <%= yield %>
   
+  
+      <div class="card">
+        <h2 class="member-area-heading">Member Area</h2>
+        <% if current_member %>
+          <li><%= link_to 'Edit details', edit_member_registration_path %></li>
+          <li><%= link_to 'Invoice', invoice_path, :target => "_blank" %></li>
+          <li><%= link_to 'Sign out', destroy_member_session_path, :method => :delete %></li>
+        <% else %>
+          <li><%= link_to 'Sign in', new_member_session_path %></li>
+        <% end %>
+      </div>
+
+    </div>
 </body>
 </html>

@@ -1,6 +1,14 @@
 
-<div class="card">
-<h2>About</h2>
+<div class="card card-backside card-site-title">
+
+  <div class="" style="text-align: center; margin-top: 155px;">
+
+  </div>
+</div>
+
+<div class="card card-about">
+
+<h2 class="about-heading">About</h2>
 
 <p>
 There are <%= Location.free_workspaces %> work spaces currently available for renting. Monthly rent is now <%= Invoice.new.taxless.to_i %> € (+VAT).
@@ -11,22 +19,11 @@ There are <%= Location.free_workspaces %> work spaces currently available for re
 </p>
 
 <p>
-Deck is located at Pursimiehenkatu 26&nbsp;H, right next to the last stop of tram number 1. Bus 14 rides rides close as well.
+Deck is located at Pursimiehenkatu 26&nbsp;H, right next to the last stop of tram number 1A (Eira). Bus 14 rides rides close as well.
 </p>
 </div>
 
 
-<div class="card">
-
-  <div class="" style="text-align: center; margin-top: 155px;">
-
-  <%= image_tag 'deck-logo.png', :style => '' %>
-
-
-  <div style="margin: 30px;">co-working space for software pros</div>
-
-  </div>
-</div>
 
 
   <% @members.each do |member| %>
