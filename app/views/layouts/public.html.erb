@@ -26,24 +26,9 @@
       <p class="alert"><%= alert %></p>
       <% end %>
 
-      <div class="member-content">
 
       <%= yield %>
   
-      </div>
-  
-      <div class="card card-member-area member-menu" style="<%= random_rotation_css %>">
-        <h2 class="member-area-heading">Member Area</h2>
-        <li><%= link_to 'Home', '/' %></li>
-        <% if current_member %>
-          <li><%= link_to 'Edit details', edit_member_registration_path %></li>
-          <li><%= link_to 'Invoice', invoice_path, :target => "_blank" %></li>
-          <li><%= link_to 'Sign out', destroy_member_session_path, :method => :delete %></li>
-        <% else %>
-          <li><%= link_to 'Sign in', new_member_session_path %></li>
-        <% end %>
-      </div>
-
     </div>
 </body>
 </html>

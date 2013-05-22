@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @members = Member.all
+    render :layout => 'public'
   end
   
   def invoice

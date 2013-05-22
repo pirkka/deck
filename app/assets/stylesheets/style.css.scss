@@ -48,26 +48,9 @@ a:hover{
 	text-decoration: none;
 }
 
-.x-leaflet-marker-icon {
-  -webkit-animation-duration: 3s;
-  -webkit-animation-name: rotate;
-  -webkit-animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes rotate {
-  from {
-    -webkit-transform: rotateX(0deg);
-  }
- 
-  to {
-    -webkit-transform: rotateX(360deg);
-  }
-}
-
 #map {
   width: 335px;
   height: 485px;
-  overflow: hidden;
   border: 1px solid #eee;
 }
 
@@ -133,9 +116,7 @@ a:hover{
 }
 
 .card-map {
-  transform: rotate(-2deg);
-  -ms-transform: rotate(-2deg); /* IE 9 */
-  -webkit-transform: rotate(-2deg); /* Safari and Chrome */
+
 }
 
 .card-site-title {
@@ -149,15 +130,11 @@ a:hover{
 }
 
 .card-about {
-  transform: rotate(2deg);
-  -ms-transform: rotate(2deg); /* IE 9 */
-  -webkit-transform: rotate(2deg); /* Safari and Chrome */
+
 }
 
 .card-member-area {
-  transform: rotate(4deg);
-  -ms-transform: rotate(4deg); /* IE 9 */
-  -webkit-transform: rotate(4deg); /* Safari and Chrome */
+
 }
 
 .about-heading {
@@ -178,4 +155,20 @@ div.photo {
  height: 485px; 
  margin: 0;
  background: red;
+}
+
+div.member-content {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 800px;
+  padding: 100px;
+  border-right: 1px solid #eee;
+}
+
+.member-menu {
+  position: fixed;
+  bottom: 50px;
+  left: 930px;
 }
