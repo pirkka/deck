@@ -9,6 +9,6 @@ class HomeController < ApplicationController
     @invoice = Invoice.new
     @invoice.invoicer = Member.find(ENV['INVOICER_ID'])
     @invoice.invoicee = current_member
-    render :layout => 'invoice'
+    # render :layout => 'invoice'
   end
 end
