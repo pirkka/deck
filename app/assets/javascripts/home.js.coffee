@@ -23,9 +23,9 @@
 # using append and prepend
 
 $ ->
-  $('.member-card').click -> 
+  $('.shufflable').click -> 
     console.log 'reordering stack using prepend'
-    $('.stack').prepend($(this));
+    $(this).parent().prepend($(this));
     
     # and now we can still randomize the position of the adjusted card
 

@@ -6,6 +6,11 @@ Co working space management system.
 TODO
 ====
 - web layoutz
+- about-tekstistä puuttuu mission statement, eli mistä oikein on kyse
+- onko tausta liian levoton (jäävätkö silmät harhailemaan sinne?) 
+  - kontrasti tai patternin suurennus/pienennys voisi auttaa
+- fontti: https://twitter.com/tomcrabtree/status/289105678256181249
+
 
 ENV CONFIG EXAMPLE
 ==================

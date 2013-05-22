@@ -33,7 +33,7 @@ Deck is located at Pursimiehenkatu 26&nbsp;H, right next to the last stop of tra
 <div class="stack">
 
   <% @members.shuffle.each do |member| %>
-  <div class="card member-card unselectable" style="<%= random_rotation_css %>">
+  <div class="card member-card unselectable shufflable" style="<%= random_rotation_css %>">
     <a href="<%= member.url %>">
       <div class="member-name">
         <%= member.name %>
@@ -49,16 +49,9 @@ Deck is located at Pursimiehenkatu 26&nbsp;H, right next to the last stop of tra
 
 <div class="stack">
 
-  <% @members.shuffle.each do |member| %>
-  <div class="card member-card unselectable" style="<%= random_rotation_css %>">
-    <a href="<%= member.url %>">
-      <div class="member-name">
-        <%= member.name %>
-      </div>
-      <div class="member-company">  
-        <%= member.company%>
-      </div>
-      </a>
+  <% [1,2,3,4,5].shuffle.each do |photo| %>
+  <div class="card stack-card unselectable shufflable" style="<%= random_rotation_css %>">
+    <div class="photo" style="background: url(<%= image_path "photo#{photo}.png" %>)"></div>
   </div>
   <% end %>
 

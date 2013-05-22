@@ -96,12 +96,17 @@ a:hover{
 .member-card {
   background: url(image-path("deck-card-tuukka.png"));
   position: absolute;
-  transform: rotate(-10deg);
-  -ms-transform: rotate(-10deg); /* IE 9 */
-  -webkit-transform: rotate(-10deg); /* Safari and Chrome */
   margin: 0;
   cursor: pointer;
 }
+
+.stack-card {
+  background: url(image-path("deck-card-deco.png"));
+  position: absolute;
+  margin: 0;
+  cursor: pointer;
+}
+
 
 .unselectable {
   -webkit-touch-callout: none;
@@ -167,4 +172,10 @@ p {
   margin-bottom: 20px;
   margin-left: 10px;
   margin-right: 10px;
+}
+div.photo {
+ width: 335px;
+ height: 485px; 
+ margin: 0;
+ background: red;
 }
