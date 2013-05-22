@@ -8,8 +8,8 @@ module ApplicationHelper
 transform: rotate(#{rotate}deg);
 -ms-transform: rotate(#{rotate}deg); /* IE 9 */
 -webkit-transform: rotate(#{rotate}deg); /* Safari and Chrome */
-margin-top: #{margin_top}px;
-margin-left: #{margin_left}px;
+top: #{margin_top}px;
+left: #{margin_left}px;
 END
   end
 
@@ -21,8 +21,17 @@ END
 transform: rotate(#{rotate}deg);
 -ms-transform: rotate(#{rotate}deg); /* IE 9 */
 -webkit-transform: rotate(#{rotate}deg); /* Safari and Chrome */
-margin-top: #{margin_top}px;
-margin-left: #{margin_left}px;
+END
+  end
+
+  def sideways_random_rotation_css
+    rotate = -110 + rand(20)
+    margin_top = -10 + rand(20)
+    margin_left = -20 + rand(40)
+<<-END
+transform: rotate(#{rotate}deg);
+-ms-transform: rotate(#{rotate}deg); /* IE 9 */
+-webkit-transform: rotate(#{rotate}deg); /* Safari and Chrome */
 END
   end
 end

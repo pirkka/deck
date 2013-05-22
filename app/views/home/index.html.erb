@@ -1,12 +1,8 @@
 
-<div class="card card-backside card-site-title">
-
-  <div class="" style="text-align: center; margin-top: 155px;">
-
-  </div>
+<div class="card orderable card-backside card-site-title" style="<%= sideways_random_rotation_css %>">
 </div>
 
-<div class="card card-about" style="<%= slight_random_rotation_css %>">
+<div class="card orderable card-about" style="<%= slight_random_rotation_css %>">
 
 <h2 class="about-heading">About</h2>
 
@@ -25,9 +21,7 @@
 
 </div>
 
-
-
-<div class="stack">
+<div class="stack orderable">
 
   <% @members.shuffle.each do |member| %>
   <div class="card member-card unselectable shufflable" style="<%= random_rotation_css %>">
@@ -44,11 +38,11 @@
 
 </div>
 
-<div id="map-card" class="card card-map" style="<%= slight_random_rotation_css %>">
+<div id="map-card" class="card card-map orderable" style="<%= slight_random_rotation_css %>">
   <div id="map"></div>
 </div>
 
-<div class="card card-member-area">
+<div class="card card-member-area orderable">
   <h2 class="member-area-heading">Member Area</h2>
   <% if current_member %>
     <li><%= link_to 'Edit details', edit_member_registration_path %></li>
@@ -59,7 +53,7 @@
   <% end %>
 </div>
 
-<div class="stack">
+<div class="stack orderable">
 
   <% [1,2,3,4,5].shuffle.each do |photo| %>
   <div class="card stack-card unselectable shufflable" style="<%= random_rotation_css %>">
@@ -69,7 +63,7 @@
 
 </div>
 
-<div class="card card-about" style="<%= slight_random_rotation_css %>">
+<div class="card card-about orderable" style="<%= slight_random_rotation_css %>">
 
 <h2 class="about-heading">Interested?</h2>
 

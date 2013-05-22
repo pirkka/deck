@@ -1,9 +1,112 @@
 @import "bootstrap";
 
+/* GENERAL */
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* TYPE */
+
+h1 {
+ font-family: "BrownStd";
+ font-weight: normal; 
+}
+
+a {
+  color: #989797;
+}
+
+a:hover{
+  text-decoration: none;
+}
+.member-card a:hover div {
+	text-shadow: 0 0 20px rgba(255,255,255,.5);
+	text-decoration: none;
+}
+
+
+/* PLAYING TABLE */
+
 .container {
   width: auto;
-  margin: 100px;
+  margin: 150px; // do not lose!
+  text-align: center;
+  // background: pink;
 }
+
+body {
+  background: url(image-path("deck-pattern.png"));
+  font-family: "BrownStd";
+  font-size: 17px;
+  color: #989797;
+}
+
+/* ITEMS ON THE TABLE */
+
+/* all of the items in the front page (be it cards or stacks) have this class */
+.orderable {
+  float: left;
+  margin: 50px;
+}
+
+.card { /* poker size (2.5×3.5 inches (63×88 mm), our size 375 * 525*/
+  background: white;
+  padding: 20px;
+  border-radius: 17px;
+  width: 335px;
+  height: 485px;
+  text-align: center;
+  border: 1px solid #eee;
+  background: url(image-path("deck-card-deco.png"));
+}
+
+.stack-card {
+  background: url(image-path("deck-card-deco.png"));
+  position: absolute;
+  cursor: pointer;
+}
+
+.member-card {
+  background: url(image-path("deck-card-tuukka.png"));
+  position: absolute;
+  cursor: pointer;
+}
+
+.stack {
+  position: relative;
+  width: 335px;
+  height: 485px;
+}
+
+.card-backside {
+  background: url(image-path("deck-card-backside.png"));
+}
+
+.card-map {
+}
+
+.card-about {
+
+}
+
+.card-member-area {
+
+}
+
+.card-container {
+
+}
+
+.card-site-title {
+}
+
+/* CONTENT */
 
 .member-name {
   color: white;
@@ -24,30 +127,6 @@
   text-shadow: 2px 2px #444;
 }
 
-body {
-  background: url(image-path("deck-pattern.png"));
-  font-family: "BrownStd";
-  font-size: 17px;
-  color: #989797;
-}
-
-h1 {
- font-family: "BrownStd";
- font-weight: normal; 
-}
-
-a {
-  color: #989797;
-}
-
-a:hover{
-  text-decoration: none;
-}
-.member-card a:hover div {
-	text-shadow: 0 0 20px rgba(255,255,255,.5);
-	text-decoration: none;
-}
-
 #map {
   width: 335px;
   height: 485px;
@@ -60,81 +139,6 @@ a:hover{
 
 .leaflet-control-attribution {
   opacity: 0.7;
-}
-
-.card { /* poker size (2.5×3.5 inches (63×88 mm), our size 375 * 525*/
-  margin-top: 40px;
-  background: white;
-  padding: 20px;
-  border-radius: 17px;
-  width: 335px;
-  height: 485px;
-  float: left;
-  margin: 22px;
-  text-align: center;
-  border: 1px solid #eee;
-  background: url(image-path("deck-card-deco.png"));
-}
-
-.member-card {
-  background: url(image-path("deck-card-tuukka.png"));
-  position: absolute;
-  margin: 0;
-  cursor: pointer;
-}
-
-.stack-card {
-  background: url(image-path("deck-card-deco.png"));
-  position: absolute;
-  margin: 0;
-  cursor: pointer;
-}
-
-
-.unselectable {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.stack {
-  position: relative;
-  float: left;
-  width: 335px;
-  height: 485px;
-  float: left;
-  margin: 22px;
-  margin-left: 60px;
-  margin-right: 60px;
-}
-
-.card-backside {
-  background: url(image-path("deck-card-backside.png"));
-}
-
-.card-map {
-
-}
-
-.card-site-title {
-  transform: rotate(-110deg);
-  -ms-transform: rotate(-110deg); /* IE 9 */
-  -webkit-transform: rotate(-110deg); /* Safari and Chrome */
-  margin-top: -70px;
-  margin-left: 30px;
-  margin-right: 70px;
-  z-index: 10;
-}
-
-.card-about {
-
-}
-
-.card-member-area {
-
 }
 
 .about-heading {
@@ -156,6 +160,8 @@ div.photo {
  margin: 0;
  background: red;
 }
+
+/* MEMBER AREA */
 
 div.member-content {
   background: white;
