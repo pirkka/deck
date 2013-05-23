@@ -7,15 +7,15 @@
     <h2 class="about-heading">About</h2>
 
     <p>
-      Deck is a co-working space for those who work with software and internet.
+      Deck is a co-working space for those who work with software and internet. 
+    </p>
+    
+    <p>
+      Our aim is to sustain a synergistic and fun working community for freelancers.
     </p>
 
     <p>
-      Services include 200 MB internet, electronic alarm system, weekly cleaning, kitchen area and planning/meeting space.
-    </p>
-
-    <p>
-      Deck is located at Pursimiehenkatu 26&nbsp;H, right next to the last stop of tram number 1A (Eira). Bus 14 rides rides very close as well.
+      Deck is located at Pursimiehenkatu 26&nbsp;H. Our doorway is right next to the final stop of tram line 1A to Eira. Bus 14 rides very close as well.
     </p>
 
 
@@ -26,14 +26,22 @@
 
   <% @members.shuffle.each do |member| %>
   <div class="card member-card unselectable shufflable" style="<%= random_rotation_css %>">
-    <a href="<%= member.url %>">
       <div class="member-name">
         <%= member.name %>
       </div>
       <div class="member-company">  
         <%= member.company%>
       </div>
-      </a>
+  </div>
+  <% end %>
+
+</div>
+
+<div class="stack orderable">
+
+  <% [1,2,3,4,5].shuffle.each do |photo| %>
+  <div class="card stack-card unselectable shufflable" style="<%= random_rotation_css %>">
+    <div class="photo" style="background: url(<%= image_path "photo#{photo}.png" %>)"></div>
   </div>
   <% end %>
 
@@ -42,6 +50,28 @@
 <div class="stack orderable">
   <div id="map-card" class="card card-map" style="<%= slight_random_rotation_css %>">
     <div id="map"></div>
+  </div>
+</div>
+
+<div class="stack orderable">
+  <div class="card card-about" style="<%= slight_random_rotation_css %>">
+
+  <h2 class="relevant-heading">Relevant to your interests?</h2>
+
+  <p>
+    <%= Location.free_workspaces %> free work spaces are currently available for rent. 
+    Monthly rent is now <%= Invoice.new.taxless.to_i %> € (+VAT).
+  </p> 
+
+  <p>
+    Services include 200 MB internet, electronic alarm system, weekly cleaning, kitchen area and planning/meeting space.
+  </p>
+
+  <p>
+    For enquiries, please contact Pirkka&nbsp;Esko.
+  </p>
+  <p>mail@pirkkaesko.com <br/> +358 50 3062243</p>
+
   </div>
 </div>
 
@@ -59,33 +89,6 @@
   </div>
 </div>
 
-<div class="stack orderable">
-
-  <% [1,2,3,4,5].shuffle.each do |photo| %>
-  <div class="card stack-card unselectable shufflable" style="<%= random_rotation_css %>">
-    <div class="photo" style="background: url(<%= image_path "photo#{photo}.png" %>)"></div>
-  </div>
-  <% end %>
-
-</div>
-
-<div class="stack orderable">
-  <div class="card card-about" style="<%= slight_random_rotation_css %>">
-
-  <h2 class="about-heading">Interested?</h2>
-
-  <p>
-    <%= Location.free_workspaces %> free work spaces are currently available for rent. 
-    Monthly rent is now <%= Invoice.new.taxless.to_i %> € (+VAT).
-  </p> 
-
-  <p>
-    For enquiries please contact Pirkka&nbsp;Esko.
-  </p>
-
-  </div>
-</div>
-
 <script type="text/javascript">
 $(function () {
   
@@ -93,7 +96,7 @@ $(function () {
   var layer = new L.StamenTileLayer("toner-lite");
   var map = new L.Map("map", {
       center: new L.LatLng(<%= Location.lat%>, <%= Location.lon %>),
-      zoom: 17
+      zoom: 12 /* or 17 or 12 */
   });
   map.addLayer(layer);
   
