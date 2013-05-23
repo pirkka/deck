@@ -38,6 +38,7 @@ a:hover{
   margin: 150px; // do not lose!
   text-align: center;
   // background: pink;
+  min-height: 5000px;
 }
 
 body {
@@ -53,6 +54,8 @@ body {
 .orderable {
   float: left;
   margin: 50px;
+  width: 375px;
+  height: 525px;
 }
 
 .card { /* poker size (2.5×3.5 inches (63×88 mm), our size 375 * 525*/
@@ -80,8 +83,6 @@ body {
 
 .stack {
   position: relative;
-  width: 335px;
-  height: 485px;
 }
 
 .card-backside {
