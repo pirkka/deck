@@ -5,12 +5,8 @@ Co working space management system.
 
 TODO
 ====
-- web layoutz
 - alempana olevaa korttia painaessa sen pitäisi hypätä pinon ylimmmäksi - ylimmän on aina vaihduttava kun klikkaa pinoa
-- onko tausta liian levoton (jäävätkö silmät harhailemaan sinne?) 
-  - kontrasti tai patternin suurennus/pienennys voisi auttaa
-- fontti: https://twitter.com/tomcrabtree/status/289105678256181249
-
+- intraweb layoutz
 
 ENV CONFIG EXAMPLE
 ==================
