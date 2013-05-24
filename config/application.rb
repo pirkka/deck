@@ -60,5 +60,17 @@ module Deck
     config.assets.version = '1.0'
     
     config.assets.initialize_on_precompile = false
+    
+    config.assets.paths << "#{Rails.root}/app/assets/webfonts"
+    
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', 
+            :headers => :any, 
+            :methods => [:get, :post, :delete, :put, :options]
+      end
+    end
+    
   end
 end

@@ -1,0 +1,25 @@
+/* @license
+ * MyFonts Webfont Build ID 2563745, 2013-05-24T04:02:54-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Gibson by Canada Type
+ * URL: http://www.myfonts.com/fonts/canadatype/gibson/regular/
+ * Copyright: Copyright &#x00A9; 2011 Rod McDonald. Published by Canada Type. All rights reserved.
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2563745
+ * 
+ * © 2013 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/271ea1");
+
+  
+@font-face {font-family: 'Gibson-Regular';src: url('271EA1_0_0.eot');src: url('271EA1_0_0.eot?#iefix') format('embedded-opentype'),url('271EA1_0_0.woff') format('woff'),url('271EA1_0_0.ttf') format('truetype'),url('271EA1_0_0.svg#wf') format('svg');}
