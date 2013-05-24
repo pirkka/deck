@@ -28,11 +28,11 @@
 @import url("//hello.myfonts.net/count/271f08");
 
   
-@font-face {font-family: 'Gibson-Regular';src: url('271F08_0_0.eot');src: url('271F08_0_0.eot?#iefix') format('embedded-opentype'),url('271F08_0_0.woff') format('woff'),url('271F08_0_0.ttf') format('truetype'),url('271F08_0_0.svg#wf') format('svg');}
+@font-face {font-family: 'Gibson-Regular';src:url('271F08_0_unhinted_0.woff') format('woff'),url('271F08_0_unhinted_0.ttf') format('truetype');}
  
   
-@font-face {font-family: 'Gibson-SemiBold';src: url('271F08_1_0.eot');src: url('271F08_1_0.eot?#iefix') format('embedded-opentype'),url('271F08_1_0.woff') format('woff'),url('271F08_1_0.ttf') format('truetype'),url('271F08_1_0.svg#wf') format('svg');}
+@font-face {font-family: 'Gibson-SemiBold';src:url('271F08_1_unhinted_0.woff') format('woff'),url('271F08_1_unhinted_0.ttf') format('truetype');}
  
   
-@font-face {font-family: 'Gibson-Italic';src: url('271F08_2_0.eot');src: url('271F08_2_0.eot?#iefix') format('embedded-opentype'),url('271F08_2_0.woff') format('woff'),url('271F08_2_0.ttf') format('truetype'),url('271F08_2_0.svg#wf') format('svg');}
+@font-face {font-family: 'Gibson-Italic';src:url('271F08_2_unhinted_0.woff') format('woff'),url('271F08_2_unhinted_0.ttf') format('truetype');}
  

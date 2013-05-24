@@ -15,8 +15,18 @@
 
 body {
   font-family: "Gibson-Regular"; /* "Gibson-Regular" */
-  font-size: 19px;
-  line-height: 21px;
+  font-size: 24px;
+  line-height: 23px;
+}
+
+em {
+  font-family: "Gibson-Italic";
+  font-weight: normal;
+}
+
+b {
+  font-family: "Gibson-SemiBold";
+  font-weight: normal;
 }
 
 a {
@@ -41,7 +51,7 @@ h2 {
 
 .container {
   width: auto;
-  margin: 150px; // do not lose!
+  margin: 125px; // do not lose!
   text-align: center;
 }
 
@@ -71,7 +81,7 @@ body {
   background: url(image-path("deck-card-deco.png"));
 }
 
-.stack-card {
+.shufflable {
   background: url(image-path("deck-card-deco.png"));
   position: absolute;
   cursor: pointer;
@@ -79,7 +89,6 @@ body {
 
 .member-card {
   background: url(image-path("deck-card-tuukka.png"));
-  position: absolute;
   cursor: pointer;
 }
 
