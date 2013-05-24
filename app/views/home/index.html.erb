@@ -3,6 +3,27 @@
 </div>
 
 <div class="stack orderable">
+
+  <div class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
+    <h2 class="about-heading">Facilities</h2>
+    <ul>
+      <li>12 spaces for working</li>
+      <li>sofa corner</li>
+      <li>kitchen</li>
+      <li>meeting/planning area</li>
+      <li>135 m<sup>2</sup></li>
+    </ul>
+  </div>
+
+  <div class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
+    <h2 class="about-heading">Services</h2>
+    <ul>
+      <li>200 MB internet by Welho</li>
+      <li>Burglar alarm featuring security guards by Securitas</li>
+      <li>Weekly cleaning</li>
+    </ul>
+  </div>
+
   <div class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
     <h2 class="about-heading">Location</h2>
     <p>
@@ -14,25 +35,6 @@
     <p>
       The final stop of tram line 1A to Eira is right outside our doorstep. Bus 14 rides very close as well.
     </p>
-  </div>
-
-  <div class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
-    <h2 class="about-heading">Services</h2>
-    <ul>
-      <li>200 MB internet</li>
-      <li>Burglar alarm w/ security guards</li>
-      <li>weekly cleaning</li>
-    </ul>
-  </div>
-
-  <div class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
-    <h2 class="about-heading">Facilities</h2>
-    <ul>
-      <li>12 spaces for working</li>
-      <li>sofa corner</li>
-      <li>kitchen</li>
-      <li>meeting/planning area</li>
-    </ul>
   </div>
 
   <div class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
@@ -91,7 +93,7 @@
     
   </p>
   <p>
-    Monthly rent for single work space <%= Invoice.new.taxless.to_i %> € (+VAT).
+    Monthly rent for single work space is approximately <%= Invoice.new.taxless.to_i %> € (+VAT).
   </p> 
   
   <p>

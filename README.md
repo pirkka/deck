@@ -5,8 +5,9 @@ Co working space management system.
 
 TODO
 ====
-- alempana olevaa korttia painaessa sen pitäisi hypätä pinon ylimmmäksi - ylimmän on aina vaihduttava kun klikkaa pinoa
 - intraweb layoutz
+- listojen layoutti
+- tekstit kokonaan suomeksi?
 
 ENV CONFIG EXAMPLE
 ==================
