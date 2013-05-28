@@ -5,21 +5,24 @@
 <div class="stack orderable">
 
   <div class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
-    <h2 class="about-heading">Facilities</h2>
+    <h2 class="about-heading" style="margin-top: 85px;">Facilities</h2>
     <ul>
-      <li>12 spaces for working</li>
+      <li>12 personal desk spaces</li>
       <li>sofa corner</li>
       <li>kitchen</li>
-      <li>meeting/planning area</li>
-      <li>135 m<sup>2</sup></li>
+      <li>meeting/workshop area</li>
+      <li>enough windows yet no direct sunlight</li>
+      <li>easy access to street</li>
+      <li>135 m<sup>2</sup> total area</li>
     </ul>
   </div>
 
   <div class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
-    <h2 class="about-heading">Services</h2>
+    <h2 class="about-heading" style="margin-top: 130px;">Services</h2>
     <ul>
       <li>200 MB internet by Welho</li>
       <li>Burglar alarm featuring security guards by Securitas</li>
+      <li>Printer</li>
       <li>Weekly cleaning</li>
     </ul>
   </div>
@@ -104,6 +107,7 @@
   </div>
 </div>
 
+<!--
 <div class="stack orderable">
 
   <div class="card card-member-area">
@@ -118,6 +122,8 @@
   </div>
 </div>
 
+-->
+
 <script type="text/javascript">
 $(function () {
   
@@ -129,6 +135,36 @@ $(function () {
   });
   map.addLayer(layer);
   
+  // // control for centering
+  // 
+  // var MyControl = L.Control.extend({
+  //     options: {
+  //         position: 'bottomleft'
+  //     },
+  // 
+  //     onAdd: function (map) {
+  //         // create the control container with a particular class name
+  //         var container = L.DomUtil.create('div', 'center-map-control');
+  // 
+  //         // ... initialize other DOM elements, add listeners, etc.
+  //         
+  //         $('.center-map-control').click(function () {
+  //           console.log('centering...');
+  //           map.panTo(new L.LatLng(60.15827, 24.934));
+  //         });
+  // 
+  //         return container;
+  //     }
+  // });
+  // 
+  // map.addControl(new MyControl());
+  // 
+  
+  // experiment
+  x = function () {
+    map.panTo(new L.LatLng(60.15827, 24.934));
+  }
+  
   var deckIcon = L.icon({
     iconUrl: '/assets/deck-marker.png',
     iconSize:     [80, 47],
@@ -138,6 +174,44 @@ $(function () {
   
   // add a marker in the given location, attach some popup content to it and open the popup
   L.marker([<%= Location.lat%>, <%= Location.lon %>], {icon: deckIcon}).addTo(map);
+
+  // gravity for the map panning
+
+  map.on('mousedown', function(e) {
+    console.log('mousedown');
+    sinceMoved = 0;
+  });
+
+  map.on('mouseup', function(e) {
+    console.log('mouseup');
+    sinceMoved = 0;
+  });
+
+  map.on('mouseout', function(e) {
+    console.log('mouseout');
+    sinceMoved = 0;
+  });
+
+  map.on('mousein', function(e) {
+    console.log('mousein');
+    sinceMoved = 0;
+  });
+
+  map.on('mousemove', function(e) {
+    console.log('mousemove');
+    sinceMoved = 0;
+  });
   
-    });
+  var sinceMoved = 0;
+  
+  var timer = setInterval(function(){
+    console.log('sincemoved: ' + sinceMoved);
+    sinceMoved += 1;
+    if (sinceMoved > 10) {
+      map.panTo(new L.LatLng(60.15827, 24.934));
+      sinceMoved = 0;
+    }
+  },500);
+  
+});
 </script>

@@ -5,9 +5,12 @@ Co working space management system.
 
 TODO
 ====
+- kartta palaamaan takaisin keskipisteeseen automagic
+- member sign in muualle
 - intraweb layoutz
 - listojen layoutti
 - tekstit kokonaan suomeksi?
+- foursquare
 
 ENV CONFIG EXAMPLE
 ==================

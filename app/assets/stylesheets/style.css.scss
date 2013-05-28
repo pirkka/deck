@@ -171,6 +171,21 @@ p {
   margin-left: 8px;
   margin-right: 8px;
 }
+
+ul
+{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+ul li
+{
+  padding: 0;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  line-height: 23px;
+}
+
 div.photo {
  width: 335px;
  height: 485px; 
@@ -194,4 +209,11 @@ div.member-content {
   position: fixed;
   bottom: 50px;
   left: 930px;
+}
+
+.center-map-control {
+  background: red;
+  width: 30px;
+  height: 30px;
+  top: -31px;
 }
