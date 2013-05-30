@@ -8,6 +8,9 @@ class Invoice
   end
   
   def taxless
+    if Location.utilized_workspaces == 0
+      return 0
+    end
     (Invoice.total_costs / Location.utilized_workspaces).round(2)
   end
   
