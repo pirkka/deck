@@ -11,4 +11,8 @@ class HomeController < ApplicationController
     @invoice.invoicee = current_member
     # render :layout => 'invoice'
   end
+  
+  def ping
+    render :text => 'a-ok'
+  end
 end

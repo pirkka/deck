@@ -4,6 +4,8 @@ Deck::Application.routes.draw do
   
   match '/invoice' => 'home#invoice', :as => :invoice
 
+  match '/ping' => 'home#ping', :as => :invoice
+
   root :to => "home#index"
 
   
