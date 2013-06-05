@@ -32,4 +32,8 @@ module Location
     ENV['LON'].to_f
   end
   
+  def self.rent_for_potential_new_member
+    (Invoice.total_costs / (Location.utilized_workspaces + 1)).round(2)
+  end
+  
 end

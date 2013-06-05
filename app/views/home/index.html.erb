@@ -59,7 +59,7 @@
 <div class="stack orderable">
 
   <% @members.shuffle.each do |member| %>
-  <div class="card member-card unselectable shufflable" style="background: url(<%= image_path "member#{member.id}.png" %>); <%= random_rotation_css %>">
+  <div class="card member-card unselectable shufflable" style="background: url(<%= image_path "member1.png" %>); <%= random_rotation_css %>">
       <div class="member-name">
         <%= member.name %>
       </div>
@@ -98,7 +98,7 @@
     
   </p>
   <p>
-    Monthly rent for single work space is approximately <%= Invoice.new.taxless.to_i %> € (+VAT).
+    Monthly rent for single work space is approximately <%= Location.rent_for_potential_new_member.to_i %> € (+VAT).
   </p> 
   
   <p>
