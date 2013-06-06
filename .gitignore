@@ -15,3 +15,8 @@
 /tmp
 
 /.env
+
+.env
+.env.production
+.env.development
+.env.staging
