@@ -4,7 +4,7 @@
 
 <div class="stack orderable">
 
-  <div class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
+  <div id="card-facilities" class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
     <h2 class="about-heading" style="margin-top: 85px;">Facilities</h2>
     <ul>
       <li>12 personal desk spaces</li>
@@ -17,7 +17,7 @@
     </ul>
   </div>
 
-  <div class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
+  <div id="card-services" class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
     <h2 class="about-heading" style="margin-top: 130px;">Services</h2>
     <ul>
       <li>200 MB internet by Welho</li>
@@ -27,7 +27,7 @@
     </ul>
   </div>
 
-  <div class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
+  <div id="card-location" class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
     <h2 class="about-heading">Location</h2>
     <p>
       Deck is located in the hip and happening Punavuori district. 
@@ -40,7 +40,7 @@
     </p>
   </div>
 
-  <div class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
+  <div id="card-about" class="card card-about shufflable unselectable" style="<%= slight_random_rotation_css %>">
     <h2 class="about-heading">About</h2>
     <p>
       Deck is a co-working space (in French "ty&ouml;huone") for those who work with software and internet. 
@@ -75,7 +75,7 @@
 <div class="stack orderable">
 
   <% [1,2,3,4,5,6].shuffle.each do |photo| %>
-  <div class="card stack-card unselectable shufflable" style="<%= random_rotation_css %>">
+  <div id="card-photo-<%= photo %>" class="card stack-card unselectable shufflable" style="<%= random_rotation_css %>">
     <div class="photo" style="background: url(<%= image_path "photo#{photo}.png" %>);"></div>
   </div>
   <% end %>
@@ -207,7 +207,7 @@ $(function () {
   var sinceMoved = 0;
   
   var timer = setInterval(function(){
-    console.log('sincemoved: ' + sinceMoved);
+    // console.log('sincemoved: ' + sinceMoved);
     sinceMoved += 1;
     if (sinceMoved > 10) {
       map.panTo(new L.LatLng(60.15827, 24.934));

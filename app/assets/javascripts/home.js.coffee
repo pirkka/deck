@@ -25,6 +25,9 @@
 $ ->
   $('.shufflable').click -> 
 
+    # console.log('id: ' + this.id)
+    #_gaq.push(['_trackPageview', $(this).id])
+
     # is this the first card in the stack?    
     if $(this).is(':last-child')
       # this is the first card in the stack
@@ -39,10 +42,11 @@ $ ->
 
       $(this).css('margin-top', (Math.floor(Math.random() * 60) + 1) - 30)
       $(this).css('margin-left', (Math.floor(Math.random() * 80) + 1) - 40)
-
+      
+      _gaq.push(['_trackPageview', "card-to-back-" + this.id])
     else
       # this is not the first - bring it up!
       console.log 'bringing a card to the top of the stack'
       $(this).parent().append($(this));
-    
+      _gaq.push(['_trackPageview', "card-to-front-" + this.id])
   
