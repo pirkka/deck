@@ -30,12 +30,12 @@ readjust = ->
   rotation = -80 - (Math.floor(Math.random() * 40) + 1) 
   console.log 'moving site title'
   
-  $('.card-site-title').transition({'rotate': '' + rotation + 'deg', 'margin-top': (Math.floor(Math.random() * 60) + 1) - 30, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40})
-  delay 15000, readjust
+  $('.card-site-title').transition({'duration': 2000,'rotate': '' + rotation + 'deg', 'margin-top': (Math.floor(Math.random() * 60) + 1) - 30, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40})
+  delay 7500, readjust
 
 $ ->
 
-  delay 15000, readjust
+  delay 7500, readjust
     
   
   $('.shufflable').click -> 
