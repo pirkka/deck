@@ -3,6 +3,7 @@ Deck::Application.routes.draw do
   devise_for :members
   
   match '/invoice' => 'home#invoice', :as => :invoice
+  match '/printout' => 'home#printout', :as => :printout
 
   match '/ping' => 'home#ping', :as => :invoice
 
