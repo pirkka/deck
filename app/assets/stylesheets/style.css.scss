@@ -51,9 +51,11 @@ h2 {
 
 .container {
   width: auto;
-  margin: 125px; // do not lose!
+  margin: 50px; // do not lose!
   text-align: center;
 }
+
+/* MAKE THE CONTAINER MARGIN DEPEND ON THE SCREEN SIZE  */
 
 body {
   background: #e0e0e0;
@@ -64,7 +66,6 @@ body {
 
 /* all of the items in the front page (be it cards or stacks) have this class */
 .orderable {
-  float: left;
   margin: 50px;
   width: 375px;
   height: 525px;
@@ -94,6 +95,7 @@ body {
 
 .stack {
   position: relative;
+  display: inline-block;
 }
 
 .card-backside {
@@ -108,10 +110,6 @@ body {
 }
 
 .card-member-area {
-
-}
-
-.card-container {
 
 }
 

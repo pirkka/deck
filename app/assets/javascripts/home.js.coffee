@@ -35,7 +35,7 @@ readjust = ->
 
 $ ->
 
-  delay 7500, readjust
+#  delay 7500, readjust
     
   
   $('.shufflable').click -> 
