@@ -59,12 +59,16 @@ $ ->
     readjust()
     _gaq.push(['_trackPageview', "card-site-title-click"])
   
-  $('.shufflable').click -> 
+  $('.shufflable').click (e) -> 
     cards_have_been_clickd = true
     hide_clickability_notification()
     # console.log('id: ' + this.id)
     #_gaq.push(['_trackPageview', $(this).id])
-
+    
+    horizontal_movement_amount = 300
+    if e.pageX < $(window).width()/2
+      horizontal_movement_amount = horizontal_movement_amount*-1
+    
     # is this the first card in the stack?    
     if $(this).is(':last-child')
       # this is the first card in the stack
@@ -79,7 +83,7 @@ $ ->
       
       that = this
       console.log 'move to side'
-      $(this).transition({'duration': 300, 'margin-left': 300}, moveToBack)
+      $(this).transition({'duration': 300, 'margin-left': horizontal_movement_amount}, moveToBack)
 
 
 
@@ -104,7 +108,7 @@ $ ->
         $(this).transition({'duration': 300, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40})
       
       console.log 'move to side'
-      $(this).transition({'duration': 300, 'margin-left': -300}, moveToFront)
+      $(this).transition({'duration': 300, 'margin-left': horizontal_movement_amount}, moveToFront)
       
       
       
