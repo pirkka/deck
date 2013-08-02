@@ -43,6 +43,9 @@ notify_about_clickability = ->
     
     $('.clickability-notification').transition({'duration': 5000, 'top': '20px'}, hide)
     
+    #also do this here
+    readjust()
+    
     delay 35000, notify_about_clickability
     
     _gaq.push(['_trackPageview', "clickability-notification-was-shown"])
@@ -114,6 +117,6 @@ $ ->
       
       _gaq.push(['_trackPageview', "card-to-front-" + this.id])
       
-  readjust()
+  #readjust()
 
   delay 10000, notify_about_clickability

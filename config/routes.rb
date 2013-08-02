@@ -7,6 +7,8 @@ Deck::Application.routes.draw do
 
   match '/ping' => 'home#ping', :as => :invoice
 
+  match '/members' => 'home#members', :as => :members
+
   root :to => "home#index"
 
   

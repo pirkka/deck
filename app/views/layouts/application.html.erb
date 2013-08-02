@@ -18,23 +18,18 @@
 <body>
 
     <div class="container">
-    
-      <% if notice %>
-      <p class="alert"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-      <p class="alert"><%= alert %></p>
-      <% end %>
-
       <div class="member-content">
-
-      <%= yield %>
-  
-      </div>
-  
-      <div class="card card-member-area member-menu" style="<%= random_rotation_css %>">
-        <h2 class="member-area-heading">Member Area</h2>
-        <li><%= link_to 'Home', '/' %></li>
+        
+        <% if notice %>
+        <p class="alert"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+        <p class="alert"><%= alert %></p>
+        <% end %>
+        
+        <ul class="member-area-menu">
+        <li><%= link_to 'Public website', '/' %></li>
+        <li><%= link_to 'Member home', '/members' %></li>
         <% if current_member %>
           <li><%= link_to 'Edit details', edit_member_registration_path %></li>
           <li><%= link_to 'Invoice', invoice_path, :target => "_blank" %></li>
@@ -42,7 +37,13 @@
         <% else %>
           <li><%= link_to 'Sign in', new_member_session_path %></li>
         <% end %>
+        </ul>
+        <div style="clear: both;"></div>
+
+      <%= yield %>
+  
       </div>
+  
 
     </div>
 

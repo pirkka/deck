@@ -20,4 +20,8 @@ class HomeController < ApplicationController
   def ping
     render :text => 'a-ok'
   end
+  
+  def members
+    authenticate_member!
+  end
 end

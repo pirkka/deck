@@ -206,8 +206,9 @@ div.member-content {
   top: 0;
   left: 0;
   width: 800px;
-  padding: 100px;
+  padding: 25px 100px 25px 100px;
   border-right: 1px solid #eee;
+  text-align: left;
 }
 
 .member-menu {
@@ -257,4 +258,9 @@ div.member-content {
 a.www-some:hover {
   color: #333;
   background: #ccc;
+}
+
+ul.member-area-menu li {
+  float: left;
+  margin-right: 20px;
 }
