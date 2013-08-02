@@ -64,9 +64,21 @@
         <%= member.name %>
       </div>
       <div class="member-company">  
-        <%= member.company%>
+        <%= member.company %>
       </div>
-  </div>
+      
+        <div class="some">
+          <% if member.linkedin && !member.linkedin.blank? %>
+            <a href="http://fi.linkedin.com/pub/pirkka-esko/2/a21/478">
+              <img src="http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png" width="80" height="15" border="0" alt="View Pirkka Esko's profile on LinkedIn" class="grayscale linkedin-some">
+            </a>
+          <% end %>
+          <% if member.twitter && !member.twitter.blank? %>
+            <a href="https://twitter.com/<%= member.twitter %>" class="twitter-follow-button grayscale twitter-some" data-show-count="false" data-show-screen-name="true">Follow @<%= member.twitter%></a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>    
+          <% end %>
+        </div>
+      </div>
   <% end %>
 
 </div>
