@@ -39,11 +39,11 @@ notify_about_clickability = ->
     # $('.clickability-notification').fadeIn();
 
     hide = ->
-      delay 2000, hide_clickability_notification
+      delay 5000, hide_clickability_notification
     
     $('.clickability-notification').transition({'duration': 5000, 'top': '20px'}, hide)
     
-    delay 15000, notify_about_clickability
+    delay 25000, notify_about_clickability
 
 hide_clickability_notification = ->
   console.log 'hiding the notification'
