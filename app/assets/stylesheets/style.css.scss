@@ -47,6 +47,12 @@ h2 {
   line-height: 24px;
 }
 
+.read-more {
+//  color: #666;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
 /* PLAYING TABLE */
 
 .container {
@@ -114,6 +120,7 @@ body {
 }
 
 .card-site-title {
+  cursor: pointer;
 }
 
 /* CONTENT */
@@ -214,4 +221,14 @@ div.member-content {
   width: 30px;
   height: 30px;
   top: -31px;
+}
+
+.clickability-notification {
+  position: fixed;
+  width: 100%;
+  top: -200px;
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  text-align: center;
 }

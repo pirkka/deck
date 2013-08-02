@@ -22,6 +22,8 @@
 
 # using append and prepend
 
+cards_have_been_clickd = false
+
 delay = (time, fn) ->
   setTimeout fn, time
 
@@ -31,15 +33,33 @@ readjust = ->
   console.log 'moving site title'
   
   $('.card-site-title').transition({'duration': 2000,'rotate': '' + rotation + 'deg', 'margin-top': (Math.floor(Math.random() * 60) + 1) - 30, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40})
-  delay 7500, readjust
+
+notify_about_clickability = ->
+  if !cards_have_been_clickd
+    # $('.clickability-notification').fadeIn();
+
+    hide = ->
+      delay 2000, hide_clickability_notification
+    
+    $('.clickability-notification').transition({'duration': 5000, 'top': '20px'}, hide)
+    
+    delay 15000, notify_about_clickability
+
+hide_clickability_notification = ->
+  console.log 'hiding the notification'
+  # $('.clickability-notification').fadeOut();
+  $('.clickability-notification').transition({'duration': 2000, 'top': '-200px'})
 
 $ ->
-
-#  delay 7500, readjust
-    
+  $('.card-site-title').click ->
+    cards_have_been_clickd = true
+    hide_clickability_notification()
+    readjust()
+    _gaq.push(['_trackPageview', "card-site-title-click"])
   
   $('.shufflable').click -> 
-
+    cards_have_been_clickd = true
+    hide_clickability_notification()
     # console.log('id: ' + this.id)
     #_gaq.push(['_trackPageview', $(this).id])
 
@@ -64,4 +84,7 @@ $ ->
       console.log 'bringing a card to the top of the stack'
       $(this).parent().append($(this));
       _gaq.push(['_trackPageview', "card-to-front-" + this.id])
-  
+      
+  readjust()
+
+  delay 10000, notify_about_clickability
