@@ -77,6 +77,9 @@
             <a href="https://twitter.com/<%= member.twitter %>" class="twitter-follow-button grayscale twitter-some" data-show-count="false" data-show-screen-name="true">Follow @<%= member.twitter%></a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>    
           <% end %>
+          <% if member.url && !member.url.blank? %>
+            <%= link_to "visit&nbsp;website".html_safe, member.url, :class => 'www-some', :target => '_blank' %>
+          <% end %>
         </div>
       </div>
   <% end %>
