@@ -13,7 +13,7 @@ Welcome to the DECK member area.
     <th>Phone </th>
     <th>Id#</th>
   </tr>
-<% Member.all(:order => :last_name).sort.each do |m| %>
+<% Member.all(:order => :last_name).each do |m| %>
   <tr>
     <td>
       <%= m.name%>
