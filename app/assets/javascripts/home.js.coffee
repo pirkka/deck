@@ -39,11 +39,11 @@ notify_about_clickability = ->
     # $('.clickability-notification').fadeIn();
 
     hide = ->
-      delay 5000, hide_clickability_notification
+      delay 10000, hide_clickability_notification
     
     $('.clickability-notification').transition({'duration': 5000, 'top': '20px'}, hide)
     
-    delay 25000, notify_about_clickability
+    delay 35000, notify_about_clickability
     
     _gaq.push(['_trackPageview', "clickability-notification-was-shown"])
 
