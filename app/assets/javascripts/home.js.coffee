@@ -32,7 +32,7 @@ readjust = ->
   rotation = -80 - (Math.floor(Math.random() * 40) + 1) 
   console.log 'moving site title'
   
-  $('.card-site-title').transition({'duration': 2000,'rotate': '' + rotation + 'deg', 'margin-top': (Math.floor(Math.random() * 60) + 1) - 30, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40})
+  $('.card-site-title').transition({'duration': 2000, 'rotate': '' + rotation + 'deg', 'margin-top': (Math.floor(Math.random() * 60) + 1) - 30, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40})
 
 notify_about_clickability = ->
   if !cards_have_been_clickd
@@ -74,7 +74,8 @@ $ ->
         console.log 'prepend'
         $(that).parent().prepend($(that));
         console.log 'move back'
-        $(that).transition({'duration': 300, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40})
+        rotation = 20 - (Math.floor(Math.random() * 40) + 1) 
+        $(that).transition({'duration': 300, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40, 'margin-top': Math.floor(Math.random() * 60) + 1, 'rotate': '' + rotation + 'deg'})
       
       that = this
       console.log 'move to side'
@@ -95,7 +96,18 @@ $ ->
     else
       # this is not the first - bring it up!
       console.log 'bringing a card to the top of the stack'
-      $(this).parent().append($(this));
+
+      moveToFront = ->
+        console.log 'append'
+        $(this).parent().append($(this));
+        console.log 'move back'
+        $(this).transition({'duration': 300, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40})
+      
+      console.log 'move to side'
+      $(this).transition({'duration': 300, 'margin-left': -300}, moveToFront)
+      
+      
+      
       _gaq.push(['_trackPageview', "card-to-front-" + this.id])
       
   readjust()
