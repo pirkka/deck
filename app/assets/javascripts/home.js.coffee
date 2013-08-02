@@ -32,7 +32,7 @@ readjust = ->
   rotation = -80 - (Math.floor(Math.random() * 40) + 1) 
   console.log 'moving site title'
   
-  $('.card-site-title').transition({'duration': 2000, 'rotate': '' + rotation + 'deg', 'margin-top': (Math.floor(Math.random() * 60) + 1) - 30, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40})
+  $('.card-site-title').transition({'duration': 1000, 'rotate': '' + rotation + 'deg', 'margin-top': (Math.floor(Math.random() * 60) + 1) - 30, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40})
 
 notify_about_clickability = ->
   if !cards_have_been_clickd
@@ -117,6 +117,6 @@ $ ->
       
       _gaq.push(['_trackPageview', "card-to-front-" + this.id])
       
-  #readjust()
+  readjust()
 
   delay 10000, notify_about_clickability
