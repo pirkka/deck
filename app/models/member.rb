@@ -20,5 +20,9 @@ class Member < ActiveRecord::Base
   def name
     "#{first_name} #{last_name}"
   end
+
+  def <=>(x)
+    self.last_name <=> x.last_name
+  end
   
 end

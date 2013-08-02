@@ -1,3 +1,32 @@
 <h1>Member Home</h1>
 
+<p>
 Welcome to the DECK member area. 
+</p>
+
+<h2>List of members</h2>
+
+<table>
+  <tr>
+    <th>Name </th>
+    <th>Email </th>
+    <th>Phone </th>
+    <th>Id#</th>
+  </tr>
+<% Member.all(:order => :last_name).sort.each do |m| %>
+  <tr>
+    <td>
+      <%= m.name%>
+    </td>
+    <td>
+      <%= m.email%>
+    </td>
+    <td>
+      <%= m.phone%>
+    </td>
+    <td>
+      <%= m.id %>
+    </td>
+  </tr>
+<% end %>
+</table>

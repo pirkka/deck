@@ -59,7 +59,7 @@
 <div class="stack orderable">
 
   <% @members.shuffle.each do |member| %>
-  <div class="card member-card unselectable shufflable" style="background: url(<%= image_path "member-#{member.first_name.downcase}.jpg" %>); <%= random_rotation_css %>">
+  <div class="card member-card unselectable shufflable" style="background: url(<%= image_path "member-#{member.first_name && member.first_name.downcase}.jpg" %>); <%= random_rotation_css %>">
       <div class="member-name">
         <%= member.name %>
       </div>
