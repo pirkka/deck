@@ -44,6 +44,8 @@ notify_about_clickability = ->
     $('.clickability-notification').transition({'duration': 5000, 'top': '20px'}, hide)
     
     delay 25000, notify_about_clickability
+    
+    _gaq.push(['_trackPageview', "clickability-notification-was-shown"])
 
 hide_clickability_notification = ->
   console.log 'hiding the notification'
