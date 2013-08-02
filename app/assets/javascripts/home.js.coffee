@@ -69,16 +69,27 @@ $ ->
     if $(this).is(':last-child')
       # this is the first card in the stack
       console.log 'throwing the first card to the back of the stack! and rotating it a little'
-      $(this).parent().prepend($(this));
+
+      moveToBack = ->
+        console.log 'prepend'
+        $(that).parent().prepend($(that));
+        console.log 'move back'
+        $(that).transition({'duration': 300, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40})
+      
+      that = this
+      console.log 'move to side'
+      $(this).transition({'duration': 300, 'margin-left': 300}, moveToBack)
+
+
 
       # and now we can still randomize the position of the adjusted card
-
-      $(this).css('transform', 'rotate(' + (Math.floor(Math.random() * 40) + 1) - 20) + ')'
-      $(this).css('-ms-transform', 'rotate(' + (Math.floor(Math.random() * 40) + 1) - 20) + ')'
-      $(this).css('-webkit-transform', 'rotate(' + (Math.floor(Math.random() * 40) + 1) - 20) + ')'
-
-      $(this).css('margin-top', (Math.floor(Math.random() * 60) + 1) - 30)
-      $(this).css('margin-left', (Math.floor(Math.random() * 80) + 1) - 40)
+      # 
+      # $(this).css('transform', 'rotate(' + (Math.floor(Math.random() * 40) + 1) - 20) + ')'
+      # $(this).css('-ms-transform', 'rotate(' + (Math.floor(Math.random() * 40) + 1) - 20) + ')'
+      # $(this).css('-webkit-transform', 'rotate(' + (Math.floor(Math.random() * 40) + 1) - 20) + ')'
+      # 
+      # $(this).css('margin-top', (Math.floor(Math.random() * 60) + 1) - 30)
+      # $(this).css('margin-left', (Math.floor(Math.random() * 80) + 1) - 40)
       
       _gaq.push(['_trackPageview', "card-to-back-" + this.id])
     else
