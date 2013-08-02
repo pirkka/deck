@@ -32,11 +32,11 @@
   </div>
   <div>
   <%= f.label :linkedin %>
-  <%= f.text_field :linkedin %>
+  <%= f.text_field :linkedin %> (url)
   </div>
   <div>
   <%= f.label :twitter %>
-  <%= f.text_field :twitter %>
+  <%= f.text_field :twitter %> (username, please leave out the @-sign)
   </div>
   <div>
   <%= f.label :phone %>
@@ -48,14 +48,14 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+  <div><%= f.label :password %> 
+  <%= f.password_field :password, :autocomplete => "off" %> (leave blank if you don't want to change it)</div>
 
   <div><%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
+  <div><%= f.label :current_password %> 
+  <%= f.password_field :current_password %> (your current password to confirm changes)</div>
 
   <div><%= f.submit "Update" %></div>
 <% end %>

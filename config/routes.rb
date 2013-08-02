@@ -1,6 +1,10 @@
 Deck::Application.routes.draw do
 
   devise_for :members
+
+  devise_for :members do
+   get 'members', :to => 'home#members', :as => :member_root # Rails 3
+  end
   
   match '/invoice' => 'home#invoice', :as => :invoice
   match '/printout' => 'home#printout', :as => :printout
