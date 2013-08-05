@@ -11,6 +11,10 @@
   user-select: none;
 }
 
+html {
+  overflow: hidden; /* for iOS and other small screens */
+}
+
 /* TYPE */
 
 body {
@@ -86,6 +90,7 @@ body {
   text-align: center;
   border: 1px solid #eee;
   background: url(image-path("deck-card-deco.png"));
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .shufflable {

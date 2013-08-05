@@ -36,7 +36,7 @@ readjust = ->
 
 notify_about_clickability = ->
   if !cards_have_been_clickd
-    # $('.clickability-notification').fadeIn();
+    $('.clickability-notification').fadeIn();
 
     hide = ->
       delay 10000, hide_clickability_notification
@@ -52,10 +52,23 @@ notify_about_clickability = ->
 
 hide_clickability_notification = ->
   console.log 'hiding the notification'
-  # $('.clickability-notification').fadeOut();
+  $('.clickability-notification').fadeOut();
   $('.clickability-notification').transition({'duration': 2000, 'top': '-200px'})
 
+isTouchDevice = ->
+  if window.ontouchstart || window.onmsgesturechange
+    return true
+  else
+    return false
+
+isDesktop = ->
+  if window.screenX != 0 && !isTouchDevice() 
+    return true 
+  else
+    return false
+
 $ ->
+    
   $('.card-site-title').click ->
     cards_have_been_clickd = true
     hide_clickability_notification()
@@ -68,8 +81,9 @@ $ ->
     # console.log('id: ' + this.id)
     #_gaq.push(['_trackPageview', $(this).id])
     
-    horizontal_movement_amount = 300
-    if e.pageX < $(window).width()/2
+    horizontal_movement_amount = -300
+    if e.pageX > $(window).width()/2 && isDesktop()
+      # some browser can handle throwing card to the right, not just left :]
       horizontal_movement_amount = horizontal_movement_amount*-1
     
     # is this the first card in the stack?    
@@ -83,22 +97,10 @@ $ ->
         console.log 'move back'
         rotation = 20 - (Math.floor(Math.random() * 40) + 1) 
         $(that).transition({'duration': 300, 'margin-left': (Math.floor(Math.random() * 80) + 1) - 40, 'margin-top': Math.floor(Math.random() * 60) + 1, 'rotate': '' + rotation + 'deg'})
-      
+
       that = this
       console.log 'move to side'
       $(this).transition({'duration': 300, 'margin-left': horizontal_movement_amount}, moveToBack)
-
-
-
-      # and now we can still randomize the position of the adjusted card
-      # 
-      # $(this).css('transform', 'rotate(' + (Math.floor(Math.random() * 40) + 1) - 20) + ')'
-      # $(this).css('-ms-transform', 'rotate(' + (Math.floor(Math.random() * 40) + 1) - 20) + ')'
-      # $(this).css('-webkit-transform', 'rotate(' + (Math.floor(Math.random() * 40) + 1) - 20) + ')'
-      # 
-      # $(this).css('margin-top', (Math.floor(Math.random() * 60) + 1) - 30)
-      # $(this).css('margin-left', (Math.floor(Math.random() * 80) + 1) - 40)
-      
       _gaq.push(['_trackPageview', "card-to-back-" + this.id])
     else
       # this is not the first - bring it up!
@@ -112,11 +114,9 @@ $ ->
       
       console.log 'move to side'
       $(this).transition({'duration': 300, 'margin-left': horizontal_movement_amount}, moveToFront)
-      
-      
-      
       _gaq.push(['_trackPageview', "card-to-front-" + this.id])
       
   readjust()
 
-  delay 10000, notify_about_clickability
+  if isDesktop()
+    delay 10000, notify_about_clickability

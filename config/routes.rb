@@ -15,8 +15,6 @@ Deck::Application.routes.draw do
 
   root :to => "home#index"
 
-  
-
   # DOCCOS:
 
   # The priority is based upon order of creation:
