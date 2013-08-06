@@ -69,7 +69,7 @@
       
         <div class="some">
           <% if member.linkedin && !member.linkedin.blank? %>
-            <a href="http://fi.linkedin.com/pub/pirkka-esko/2/a21/478">
+            <a href="<%= member.linkedin %>" target="_blank">
               <img src="http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png" width="80" height="15" border="0" alt="View Pirkka Esko's profile on LinkedIn" class="grayscale linkedin-some">
             </a>
           <% end %>
