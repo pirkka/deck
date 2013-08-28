@@ -82,25 +82,25 @@ body {
 }
 
 .card { /* poker size (2.5×3.5 inches (63×88 mm), our size 375 * 525*/
-  background: white;
+  background-color: white;
   padding: 20px;
   border-radius: 17px;
   width: 335px;
   height: 485px;
   text-align: center;
   border: 1px solid #eee;
-  background: url(image-path("deck-card-deco.png"));
+  background-image: url(image-path("deck-card-deco.png"));
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .shufflable {
-  background: url(image-path("deck-card-deco.png"));
+  background-image: url(image-path("deck-card-deco.png"));
   position: absolute;
   cursor: pointer;
 }
 
 .member-card {
-  background: url(image-path("deck-card-tuukka.png"));
+  background-image: url(image-path("deck-card-tuukka.png"));
   cursor: pointer;
 }
 
@@ -110,7 +110,7 @@ body {
 }
 
 .card-backside {
-  background: url(image-path("deck-card-backside.png"));
+  background-image: url(image-path("deck-card-backside.png"));
 }
 
 .card-map {
