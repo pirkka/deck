@@ -12,6 +12,7 @@ Welcome to the DECK member area.
     <th>Email </th>
     <th>Phone </th>
     <th>Id#</th>
+    <th>Other</th>
   </tr>
 <% Member.all(:order => :last_name).each do |m| %>
   <tr>
@@ -26,6 +27,9 @@ Welcome to the DECK member area.
     </td>
     <td>
       <%= m.id %>
+    </td>
+    <td>
+      <%= m.stealth && 'stealthmode' %>
     </td>
   </tr>
 <% end %>

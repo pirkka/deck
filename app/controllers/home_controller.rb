@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @members = Member.all
+    @members = Member.all.reject {|x| x.stealth? }
     render :layout => 'public'
   end
   

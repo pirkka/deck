@@ -11,6 +11,8 @@ class Member < ActiveRecord::Base
 
   attr_accessor :invite_code
   attr_accessible :invite_code
+
+  attr_accessible :tables, :stealth
   
   validates_each :invite_code, :on => :create do |record, attr, value|
       record.errors.add attr, "Please enter correct invite code" unless
