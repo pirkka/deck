@@ -131,7 +131,8 @@ $(function () {
   var map = new L.Map("map", {
       center: new L.LatLng(<%= Location.lat%>, <%= Location.lon %>),
       zoom: 12, /* or 17 or 12 */
-      scrollWheelZoom: false
+      scrollWheelZoom: false,
+      touchZoom: false
   });
   map.addLayer(layer);
   
