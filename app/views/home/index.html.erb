@@ -130,7 +130,8 @@ $(function () {
   var layer = new L.StamenTileLayer("toner-lite");
   var map = new L.Map("map", {
       center: new L.LatLng(<%= Location.lat%>, <%= Location.lon %>),
-      zoom: 12 /* or 17 or 12 */
+      zoom: 12, /* or 17 or 12 */
+      scrollWheelZoom: false
   });
   map.addLayer(layer);
   
